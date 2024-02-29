@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'ngx-toastr/toastr';
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+

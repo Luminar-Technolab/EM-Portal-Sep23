@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row ">
+        <div *ngIf="sideBarStatus" style="height: 92vh;width: fit-content;" class="side-bar col-lg-2 bg-dark d-flex flex-column p-3 ">
+            <a style="text-decoration: none;color: white;" class="fw-bolder mb-3" routerLink="/dashboard">HOME</a>
+            <a style="text-decoration: none;color: white;" class="fw-bolder" routerLink="/users">USERS</a>
+            <button (click)="logout()" class="btn mt-auto text-light fw-bolder">Logout <i class="ms-1 fa-solid fa-right-from-bracket"></i></button>
+        </div>
+        <div  class="col">
+          <div class="pt-2 w-100">
+               <div class="row  ">
+                    <div class="col-lg-8">
+                        <div style="height: 180px; background-image: url('https://static.vecteezy.com/system/resources/previews/000/664/487/original/vector-abstract-banner-design.jpg');" class="banner rounded p-3 d-flex align-items-center shadow">
+                            <h1 class="fw-bolder text-light"> <i (click)="menuBtnClicked()" style="cursor: pointer;" class="fa-solid fa-bars me-3"></i> Welcome {{adminName}}!!!</h1>
+                        </div>
+                        <div class="row mt-3 ms-1">
+                            <div class="col-lg-5  shdow">
+                                <!-- calender -->
+                                <app-calender></app-calender>
+                            </div>
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-6 border rounded shdow">
+                                <!-- chart -->
+                                <app-chart></app-chart>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div style="height: 400px;" class="border rounded p-2 shadow edit-admin ">
+                            <!-- child -->
+                            <app-update-admin (onAdminChange)="onAdminChange($event)"></app-update-admin>
+                        </div>
+                        <div style="height: 150px; background-image: url('https://static.vecteezy.com/system/resources/previews/000/664/487/original/vector-abstract-banner-design.jpg');" class=" rounded p-3 d-flex align-items-center justify-content-center shadow mt-3">
+                            <h3 class="fw-bolder text-light"> <i class="fa-solid fa-users"></i> Employees : {{userCount}} </h3>
+                        </div>
+                    </div>
+               </div>
+          </div>
+        </div>
+    </div>
+</div>
